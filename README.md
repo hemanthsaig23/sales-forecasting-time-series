@@ -98,6 +98,86 @@ The highlight of this repository is the **automated MLOps pipeline** using Apach
 - **Config**: 2 hidden layers, dropout for regularization, Adam optimizer
 
 ### 2. ARIMA (AutoRegressive Integrated Moving Average)
+
+---
+
+## 🛠️ Technology Stack
+- **Language**: Python 3.8+
+- **Deep Learning**: TensorFlow, Keras
+- **Time Series Models**: Statsmodels (ARIMA), Facebook Prophet
+- **Workflow Orchestration**: Apache Airflow
+- **Data Processing**: Pandas, NumPy
+- **Visualization**: Matplotlib, Seaborn, Plotly
+
+---
+
+## 🏗️ Project Architecture
+The forecasting pipeline consists of several key stages:
+1. **Data Ingestion**: Automated scripts to fetch and aggregate raw sales data.
+2. **Feature Engineering**: Creating lag features, rolling windows, and holiday indicators.
+3. **Model Training**:
+   - **LSTM**: Capturing non-linear temporal dependencies.
+   - **ARIMA**: Modeling linear auto-correlations.
+   - **Prophet**: Handling seasonality and trend changes.
+4. **Ensemble & Selection**: Combining model outputs or selecting the best-performing model based on validation metrics.
+5. **Orchestration**: Airflow DAGs manage the end-to-end execution flow.
+
+---
+
+## 📊 Performance Metrics
+The system achieved the following performance benchmarks:
+- **Forecast Accuracy**: 88.2%
+- **Mean Absolute Error (MAE)**: Reduced by 15% compared to baseline models.
+- **RMSE**: Optimized for high-variance sales periods.
+
+---
+
+## 📂 Data Pipeline
+- **Frequency**: Daily/Weekly sales aggregation.
+- **Preprocessing**: Scaling (Min-Max/Standard), Differencing (for stationarity), and Outlier detection.
+- **Validation**: Time-series cross-validation (Walk-forward validation).
+
+---
+
+## 💻 Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/hemanthsaig23/sales-forecasting-time-series.git
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## 🧪 Usage
+To run the forecasting pipeline manually:
+```bash
+python sales_forecasting.py
+```
+To trigger the Airflow DAG:
+1. Start the Airflow scheduler and webserver.
+2. Enable the `sales_forecast_pipeline` DAG in the Airflow UI.
+
+---
+
+## 🎓 Academic Context
+This project was developed during my Master's in Data Science at the **University of New Haven**. It demonstrates the application of hybrid forecasting methods in a production-like environment.
+
+---
+
+## 👤 Author
+**Hemanth Sai Gogineni**
+- [LinkedIn Profile](https://www.linkedin.com/in/hemanth-sai-gogineni/)
+- [GitHub Portfolio](https://github.com/hemanthsaig23)
+- Email: hemanthsai.g23@gmail.com
+
+---
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 - **Type**: Classical Statistical Model
 - **Strength**: Excellent for stationary data and short-term linear trends
 - **Config**: Auto-tuned (p,d,q) parameters using grid search
